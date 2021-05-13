@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+  <div class="navbar">
+    <a href="http://localhost:3000/">Home</a>
+    <a href="http://localhost:3000/student">Students</a>
+    <a href="http://localhost:3000/trainer">Trainers</a>
+    <a href="http://localhost:3000/assignment">Assignment</a>
+    <a href="http://localhost:3000/course">Courses</a>
+    <a href="http://localhost:3000/student/add">New Student</a>
+    <a href="http://localhost:3000/trainer/add">New Trainer</a>
+    </div>
+<div>
+<table style="width:100%" >
+  <thead>
+  <th>Id</th>
+  <th>Title</th>
+  <th>Stream</th>
+  <th>Type</th>
+  <th>Start Date</th>
+  <th>End Date</th>
+</thead>
+<tbody>
+    <tr>
+  <% for(var i = 0; i < course.length; i++) { %>
+  <tr><%= course[i].id %></tr>
+  <td>
+    <%= course[i].course_id %>
+  </td>
+  <td>
+    <%= course[i].title %>
+  </td>
+  <td>
+    <%= course[i].stream %>
+  </td>
+  <td>
+    <%= course[i].type %>
+  </td>
+  <td>
+    <%= new Date(course[i].start_date).toLocaleString() %>
+  </td>
+  <td>
+    <%= new Date(course[i].end_date).toLocaleString() %>
+  </td>
+  <% } %>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

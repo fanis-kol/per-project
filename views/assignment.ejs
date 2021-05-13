@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+  <div class="navbar">
+    <a href="http://localhost:3000/">Home</a>
+    <a href="http://localhost:3000/student">Students</a>
+    <a href="http://localhost:3000/trainer">Trainers</a>
+    <a href="http://localhost:3000/assignment">Assignment</a>
+    <a href="http://localhost:3000/course">Courses</a>
+    <a href="http://localhost:3000/student/add">New Student</a>
+    <a href="http://localhost:3000/trainer/add">New Trainer</a>
+    </div>
+<div>
+<table style="width:100%" >
+  <thead>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Submit Date</th>
+    <th>Oral Mark</th>
+    <th>Total Mark</th>
+  </thead>
+  <tbody>
+    <tr>
+  <% for(var i = 0; i < assignment.length; i++) { %>
+  <tr>  <%= assignment[i].id %></tr>
+  <td>
+       <%= assignment[i].assignments_id %>
+  </td>
+  <td>
+       <%= assignment[i].title %>
+  </td>
+  <td>
+       <%= assignment[i].description %>
+  </td>
+  <td>
+    <%= new Date(assignment[i].sub_date_time).toLocaleString() %>
+  </td>
+  <td>
+   <%= assignment[i].oral_mark %>
+  </td>
+  <td>
+   <%= assignment[i].total_mark %>
+  </td>
+ 
+  <% } %>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

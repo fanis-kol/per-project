@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+  <div class="navbar">
+    <a href="http://localhost:3000/">Home</a>
+    <a href="http://localhost:3000/student">Students</a>
+    <a href="http://localhost:3000/trainer">Trainers</a>
+    <a href="http://localhost:3000/assignment">Assignment</a>
+    <a href="http://localhost:3000/course">Courses</a>
+    <a href="http://localhost:3000/student/add">New Student</a>
+    <a href="http://localhost:3000/trainer/add">New Trainer</a>
+    </div>
+<div>
+<table style="width:100%" >
+  <thead>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Last Name</th>
+    <th>Subject</th>
+  </thead>
+  <tbody>
+    <tr>
+  <% for(var i = 0; i < trainer.length; i++) { %>
+  <tr><%= trainer[i].id %></tr>
+  <td>
+    <%= trainer[i].trainer_id %>
+  </td>
+  <td>
+    <%= trainer[i].name %>
+  </td>
+  <td>
+    <%= trainer[i].last_name %>
+  </td>
+  <td>
+    <%= trainer[i].subject %>
+  </td>
+ </tbody>
+ 
+  <% } %>
+</tr>
+</table>
+</div>
+</body>
+</html>
